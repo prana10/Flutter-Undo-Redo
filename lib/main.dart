@@ -67,21 +67,17 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             Draggable<String>(
               onDraggableCanceled: (velocity, offset) {
-                print('onDraggableCanceled');
                 setState(() {
                   dataDrag = "";
                 });
               },
               data: controller.text,
               onDragCompleted: () {
-                print('onDragCompleted');
                 setState(() {
                   controller.clear();
                 });
               },
               onDragEnd: (details) {
-                print('onDragEnd');
-                print(details);
                 setState(() {
                   dataDrag = controller.text;
                 });
@@ -97,8 +93,6 @@ class _HomePageState extends State<HomePage> {
                   setState(() {
                     dataDrag = details.data;
                   });
-                  print('onAcceptWithDetails');
-                  print(details.data);
                 },
                 builder: (context, candidateData, rejectedData) {
                   return Item(
@@ -110,7 +104,6 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 72),
             Draggable<String>(
               onDraggableCanceled: (velocity, offset) {
-                print('onDraggableCanceled');
                 setState(() {
                   controller.clear();
                 });
@@ -129,14 +122,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               onDragCompleted: () {
-                print('onDragCompleted');
                 setState(() {
                   dataDrag = "";
                 });
               },
               onDragEnd: (details) {
-                print('onDragEnd');
-                print(details);
                 setState(() {
                   controller.text = dataDrag;
                 });
@@ -146,8 +136,6 @@ class _HomePageState extends State<HomePage> {
                   setState(() {
                     dataDrag = details.data;
                   });
-                  print('onAcceptWithDetails');
-                  print(details.data);
                 },
                 builder: (
                   BuildContext context,
